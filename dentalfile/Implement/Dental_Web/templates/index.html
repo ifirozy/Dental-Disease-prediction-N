@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{%block content %}
+<div class="container" style="margin-top: 5% !important;">
+  <div class="card border-primary">
+    <div class="jumbotron bg-primary text-white" style="margin-bottom: 0rem !important;">
+      <h4 class="text-center"> <i class="fa fa-heartbeat" aria-hidden="true"></i> Welcome to our sites <i class="fa fa-heartbeat" aria-hidden="true"></i></h4>
+      <p class="text-center">Let's check if you have dental problem or not</p>
+    </div>
+  
+  <div class="card-body text-center" >
+      <h4 class="text-cener">Let's find out!!!</h4>
+      <a href="{{url_for('form')}}" class="btn btn-outline-primary">CLick Here</a>
+    </div>
+  
+    <div class="card-footer text-center bg-primary text-white">
+      <p><i class="fa fa-hand-peace-o" aria-hidden="true"></i> Best of Luck <i class="fa fa-hand-peace-o" aria-hidden="true"></i></p>
+    </div>
+  </div>
+
+
+</div>
+
+
+{% endblock %}

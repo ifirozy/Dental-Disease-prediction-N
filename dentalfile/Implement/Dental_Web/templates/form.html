@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% if final_features == 2 %}
+<div class="jumbotron text-white " style="background-color: #52a7d0; background-image:
+ url(https://roseberryfamilydental.com/wp-content/uploads/2020/03/teeth-cartoon.jpg);  background-size: contain; background-position: center;background-repeat: no-repeat;">
+    <h4>Hey!! Welcome <i class="fa fa-heartbeat" aria-hidden="true"></i></h4>
+
+    <p>Please Fill the form to get result </p>
+</div>
+{% elif final_features == 1 %}
+<div class="jumbotron text-white " style="background-color: #52a7d0; background-image:
+ url(https://roseberryfamilydental.com/wp-content/uploads/2020/03/teeth-cartoon.jpg);  background-size: contain; background-position: center;background-repeat: no-repeat;">
+    <h4>Oh!! You might have Dental Disease <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></h4>
+
+    <p>Consult with a Doctor </p>
+</div>
+
+{%else %}
+<div class="jumbotron text-white " style="background-color: #52a7d0; background-image:
+ url(https://roseberryfamilydental.com/wp-content/uploads/2020/03/teeth-cartoon.jpg);  background-size: contain; background-position: center;background-repeat: no-repeat;">
+    <h4>Congrts!! You don't have Dental Disease <i class="fa fa-heart" aria-hidden="true"></i></h4>
+
+    <p>Be Careful and Don't forget to take care your teeth <i class="fa fa-hand-peace-o" aria-hidden="true"></i> <i class="fa fa-hand-peace-o" aria-hidden="true"></i>  </p>
+</div>
+
+{% endif %}
+
+
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <br>
+                <div class="card-title text-center">
+                    <h4>Let's check!! </h4>
+                </div>
+                <div class="card-body">
+                    <!--#####################-->
+                    <form action="{{ url_for('form') }}" method="POST">
+
+
+                        <div class="form-group">
+                          <label for="age">How old are you?</label>
+                          <input required name="age" type="number" class="form-control" placeholder="Enter your age" id="age">
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="brush">Which method you use to brush?</label>
+                          <select name="brush" class="custom-select" required>
+                            <option  value=""></option>
+                            <option value="0">No specific</option>
+                            <option value="1">With Coal</option>
+                            <option value="2">With Tooth Powder</option>
+                            <option value="3">With Miswak</option>
+                            <option value="4">With toothpaste</option>
+                          </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="tfb">How much time you spend to brush?</label>
+                            <select name="tfb" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="1">1 Minute</option>
+                              <option value="2">2 Minute</option>
+                              <option value="3">3 Minute</option>
+                              
+                            </select>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="bth">Do you brush too hard?</label>
+                            <select name="bth" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">Yes</option>
+                              <option value="1">No</option>
+                            
+                              
+                            </select>
+                          </div>
+
+
+                          
+
+
+
+                          <div class="form-group">
+                            <label for="smoke">How many times you smoke in a day?</label>
+                            <select name="smoke" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="2">I don't smoke</option>
+                              <option value="5">1 times</option>
+                              <option value="4">2 times</option>
+                              <option value="1">3 times</option>
+                              <option value="0">4 times</option>
+                              <option value="6">More++</option>
+                            
+                              
+                            </select>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="alcohol">Do you drink alcohol?</label>
+                            <select name="alcohol" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">No</option>
+                              <option value="1">Several times</option>
+                              <option value="1">Daily</option>
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+
+
+
+                          <div class="form-group">
+                            <label for="coffee">Do you take coffee?</label>
+                            <select name="coffee" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">No</option>
+                              
+                              <option value="1">Yes</option>
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="sugar">How much sugar you take with coffee?</label>
+                            <select name="sugar" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="4">I don't drink coffe</option>
+                              
+                              <option value="0">No sugar</option>
+                              <option value="3">Sometimes I take sugar</option>
+                              <option value="2">High</option>
+                              <option value="1">Very High</option>
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="sweet">What about sweet?</label>
+                            <select name="sweet" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="1">Very Much</option>
+                              
+                              <option value="0">Not so much</option>
+                              <option value="2">Hate Sweet</option>
+                              
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+                          <div class="form-group">
+                            <label for="fastfood">Maybe you like fastfood then?</label>
+                            <select name="fastfood" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="1">Very Much</option>
+                              
+                              <option value="0">Not so much</option>
+                              <option value="2">I ignore them</option>
+                              
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+
+
+                          <div class="form-group">
+                            <label for="eating">So, you like eating?</label>
+                            <select name="eating" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="2">Not at all</option>
+                              
+                              <option value="0">Well it depends</option>
+                              <option value="1">Very Much</option>
+                              
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+
+
+                         
+
+
+
+                          <div class="form-group">
+                            <label for="soft">Tell me about Soft Drinks?</label>
+                            <select name="soft" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">I only love Juice</option>
+                              
+                              <option value="2">Yes</option>
+                              <option value="1">Very Much</option>
+                              <option value="3">Sometimes</option>
+                              
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+
+
+                          <div class="form-group">
+                            <label for="packets">You open packets with teeth?</label>
+                            <select name="packets" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="2">No way</option>
+                              
+                              <option value="0">Sometimes</option>
+                              <option value="1">Yes</option>
+                             
+                              
+                             
+                            
+                              
+                            </select>
+                          </div>
+
+
+
+
+                          <div class="form-group">
+                            <label for="pen">Don't tell me you love chewing pen?</label>
+                            <select name="pen" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="2">No way</option>
+                              
+                              <option value="0">Sometimes</option>
+                              <option value="1">Yes</option>
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="nail">And biting nail?</label>
+                            <select name="nail" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="2">No way</option>
+                              
+                              <option value="0">Sometimes</option>
+                              <option value="1">Yes</option>
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="grind">So, you love grinding teeth?</label>
+                            <select name="grind" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">No way</option>
+                              
+                              
+                              <option value="1">Yes</option>
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+                          
+                          <div class="form-group">
+                            <label for="leaf">You love eating Betel leaf?</label>
+                            <select name="leaf" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="2">No</option>
+                              
+                              <option value="0">Sometimes</option>
+                              <option value="1">Very Much</option>
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="toothpick">Do you use toothpick?</label>
+                            <select name="toothpick" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">No </option>
+                              
+                              
+                              <option value="1">Yes</option>
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+
+                          <div class="form-group">
+                            <label for="chocolate">Let's see if you love chocolate or not?</label>
+                            <select name="chocolate" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="1">Very Much </option>
+                              
+                              
+                              <option value="0">Sometimes</option>
+
+                              <option value="2">No</option>
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+                          <div class="form-group">
+                            <label for="diabetes">Do have diabetes?</label>
+                            <select name="diabetes" class="custom-select" required>
+                                <option  value=""></option>
+                              
+                              <option value="0">No </option>
+                              
+                              
+                              <option value="1">Yes</option>
+
+                              
+                             
+                              
+                            </select>
+                          </div>
+
+
+
+
+
+
+
+
+                        <button type="submit" style="width: 100% !important;" class="btn btn-primary">Result</button>
+                      </form>
+                      <!--############################-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
